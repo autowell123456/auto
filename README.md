@@ -1,4 +1,0 @@
-# auto
-happy
-sad
-hello
