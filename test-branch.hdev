@@ -12,8 +12,6 @@
 <l>d (ImageReduced1, Circle, ImageReduced2)</l>
 <c></c>
 <l>e (ImageReduced2, Circle1, ImageReduced3)</l>
-<c></c>
-<l>difference (Circle1, Circle1, RegionDifference)</l>
 </body>
 <docu id="main">
 <parameters/>
