@@ -1,4 +1,4 @@
 # auto
 sad world
-sad day
+sad
 happy
