@@ -1,4 +1,3 @@
 # auto
 hello
-happy
 sad
