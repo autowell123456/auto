@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.2" halcon_version="13.0.2.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>read (Image1, Region)</l>
+<c></c>
+<l>reduce (Region, Image1, RegionClosing, RegionFillUp, ImageReduced)</l>
+<c></c>
+<l>C (RegionClosing, ImageReduced, RegionTrans, ImageReduced1)</l>
+<c></c>
+<l>d (ImageReduced1, Circle, ImageReduced2)</l>
+<c></c>
+<l>e (ImageReduced2, Circle1, ImageReduced3)</l>
+<c></c>
+<l>difference (Circle1, Circle1, RegionDifference)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+<procedure name="read">
+<interface>
+<oo>
+<par name="Image1" base_type="iconic" dimension="0"/>
+<par name="Region" base_type="iconic" dimension="0"/>
+</oo>
+</interface>
+<body>
+<l>read_image (Image1, 'C:/Users/ATW/Desktop/git/1.PNG')</l>
+<l>threshold (Image1, Region, 128, 255)</l>
+<l>gen_circle (Circle, 200, 200, 100.5)</l>
+<l>return ()</l>
+</body>
+<docu id="read">
+<parameters>
+<parameter id="Image1"/>
+<parameter id="Region"/>
+</parameters>
+</docu>
+</procedure>
+<procedure name="reduce">
+<interface>
+<io>
+<par name="Region" base_type="iconic" dimension="0"/>
+<par name="Image1" base_type="iconic" dimension="0"/>
+</io>
+<oo>
+<par name="RegionClosing" base_type="iconic" dimension="0"/>
+<par name="RegionFillUp" base_type="iconic" dimension="0"/>
+<par name="ImageReduced" base_type="iconic" dimension="0"/>
+</oo>
+</interface>
+<body>
+<l>closing_circle (Region, RegionClosing, 35)</l>
+<l>fill_up (RegionClosing, RegionFillUp)</l>
+<c></c>
+<l>return ()</l>
+</body>
+<docu id="reduce">
+<parameters>
+<parameter id="Image1"/>
+<parameter id="ImageReduced"/>
+<parameter id="Region"/>
+<parameter id="RegionClosing"/>
+<parameter id="RegionFillUp"/>
+</parameters>
+</docu>
+</procedure>
+<procedure name="C">
+<interface>
+<io>
+<par name="RegionClosing" base_type="iconic" dimension="0"/>
+<par name="ImageReduced" base_type="iconic" dimension="0"/>
+</io>
+<oo>
+<par name="RegionTrans" base_type="iconic" dimension="0"/>
+<par name="ImageReduced1" base_type="iconic" dimension="0"/>
+</oo>
+</interface>
+<body>
+<l>shape_trans (RegionClosing, RegionTrans, 'convex')</l>
+<l>reduce_domain (ImageReduced, RegionTrans, ImageReduced1)</l>
+<l>return ()</l>
+</body>
+<docu id="C">
+<parameters>
+<parameter id="ImageReduced"/>
+<parameter id="ImageReduced1"/>
+<parameter id="RegionClosing"/>
+<parameter id="RegionTrans"/>
+</parameters>
+</docu>
+</procedure>
+<procedure name="d">
+<interface>
+<io>
+<par name="ImageReduced1" base_type="iconic" dimension="0"/>
+</io>
+<oo>
+<par name="Circle" base_type="iconic" dimension="0"/>
+<par name="ImageReduced2" base_type="iconic" dimension="0"/>
+</oo>
+</interface>
+<body>
+<l>gen_circle (Circle, 200, 200, 100.5)</l>
+<l>gen_rectangle1 (Rectangle, 30, 20, 500, 500)</l>
+<l>return ()</l>
+</body>
+<docu id="d">
+<parameters>
+<parameter id="Circle"/>
+<parameter id="ImageReduced1"/>
+<parameter id="ImageReduced2"/>
+</parameters>
+</docu>
+</procedure>
+<procedure name="e">
+<interface>
+<io>
+<par name="ImageReduced2" base_type="iconic" dimension="0"/>
+</io>
+<oo>
+<par name="Circle1" base_type="iconic" dimension="0"/>
+<par name="ImageReduced3" base_type="iconic" dimension="0"/>
+</oo>
+</interface>
+<body>
+<c></c>
+<l>gen_circle (Circle1, 900, 900, 900.5)</l>
+<l>reduce_domain (ImageReduced2, Circle1, ImageReduced3)</l>
+<l>return ()</l>
+</body>
+<docu id="e">
+<parameters>
+<parameter id="Circle1"/>
+<parameter id="ImageReduced2"/>
+<parameter id="ImageReduced3"/>
+</parameters>
+</docu>
+</procedure>
+</hdevelop>
