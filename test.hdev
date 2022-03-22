@@ -13,7 +13,7 @@
 <c></c>
 <l>e (ImageReduced2, Circle1, ImageReduced3)</l>
 <c></c>
-<l>difference (Circle1, Circle1, RegionDifference)</l>
+<c></c>
 </body>
 <docu id="main">
 <parameters/>
@@ -29,7 +29,10 @@
 <body>
 <l>read_image (Image1, 'C:/Users/ATW/Desktop/git/1.PNG')</l>
 <l>threshold (Image1, Region, 128, 255)</l>
+
 <l>gen_circle (Circle, 200, 200, 100.5)</l>
+
+master
 <l>return ()</l>
 </body>
 <docu id="read">
