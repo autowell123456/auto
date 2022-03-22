@@ -29,6 +29,7 @@
 <body>
 <l>read_image (Image1, 'C:/Users/ATW/Desktop/git/1.PNG')</l>
 <l>threshold (Image1, Region, 128, 255)</l>
+<c></c>
 <l>return ()</l>
 </body>
 <docu id="read">
