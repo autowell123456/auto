@@ -30,6 +30,8 @@
 <l>read_image (Image1, 'C:/Users/ATW/Desktop/git/1.PNG')</l>
 <l>threshold (Image1, Region, 128, 255)</l>
 <l>gen_circle (Circle, 200, 200, 100.5)</l>
+
+<c></c>
 <l>return ()</l>
 </body>
 <docu id="read">
